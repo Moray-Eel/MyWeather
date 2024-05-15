@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+<sho:MaterialFrame
+    CornerRadius="12.5"
+    MaterialBlurStyle="Light"
+    MaterialTheme="AcrylicBlur"
+    x:Class="MyWeather.Presentation.Controls.Frames.CityCard"
+    x:Name="CityCardControl"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:sho="http://sharpnado.com"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <sho:MaterialFrame.Behaviors>
+        <toolkit:TouchBehavior PressedBackgroundColor="LightGrey" />
+    </sho:MaterialFrame.Behaviors>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Label
+            FontAttributes="Bold"
+            FontSize="18"
+            Grid.Column="0"
+            Grid.Row="0"
+            Margin="10"
+            Text="{Binding Name, Source={x:Reference CityCardControl}}" />
+        <Label
+            FontSize="14"
+            Grid.Column="0"
+            Grid.Row="1"
+            Margin="10"
+            Text="{Binding Description, Source={x:Reference CityCardControl}}" />
+        <Label
+            FontAttributes="Bold"
+            FontSize="24"
+            Grid.Column="1"
+            Grid.Row="0"
+            Margin="10,10,0,10"
+            Text="{Binding Temperature, Source={x:Reference CityCardControl}, StringFormat='{0}°C'}" />
+    </Grid>
+</sho:MaterialFrame>

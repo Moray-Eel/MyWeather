@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentView
+    x:Class="MyWeather.Presentation.Controls.Views.ContextMenu"
+    x:DataType="views:ContextMenuViewModel"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:the49="https://schemas.the49.com/dotnet/2023/maui"
+    xmlns:views="clr-namespace:MyWeather.Presentation.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Image
+        HeightRequest="20"
+        HorizontalOptions="End"
+        Source="white_grid.png"
+        the49:ContextMenu.ShowMenuOnClick="True">
+        <the49:ContextMenu.Menu>
+            <DataTemplate>
+                <the49:Menu>
+                    <the49:Action Command="{Binding GoToSettingsCommand}" Title="Manage Cities" />
+                    <the49:Action Command="{Binding GoToMapViewCommand}" Title="View Map" />
+                </the49:Menu>
+            </DataTemplate>
+        </the49:ContextMenu.Menu>
+    </Image>
+</ContentView>

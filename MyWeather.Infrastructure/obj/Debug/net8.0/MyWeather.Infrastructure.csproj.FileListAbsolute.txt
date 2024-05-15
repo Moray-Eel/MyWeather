@@ -1,0 +1,17 @@
+C:\Users\slikm\source\repos\ApkaDoPogody\MyWeather\MyWeather.Infrastructure\bin\Debug\net8.0\x86\e_sqlite3.dll
+C:\Users\slikm\source\repos\ApkaDoPogody\MyWeather\MyWeather.Infrastructure\bin\Debug\net8.0\x64\e_sqlite3.dll
+C:\Users\slikm\source\repos\ApkaDoPogody\MyWeather\MyWeather.Infrastructure\bin\Debug\net8.0\MyWeather.Infrastructure.deps.json
+C:\Users\slikm\source\repos\ApkaDoPogody\MyWeather\MyWeather.Infrastructure\bin\Debug\net8.0\MyWeather.Infrastructure.dll
+C:\Users\slikm\source\repos\ApkaDoPogody\MyWeather\MyWeather.Infrastructure\bin\Debug\net8.0\MyWeather.Infrastructure.pdb
+C:\Users\slikm\source\repos\ApkaDoPogody\MyWeather\MyWeather.Infrastructure\bin\Debug\net8.0\MyWeather.Application.dll
+C:\Users\slikm\source\repos\ApkaDoPogody\MyWeather\MyWeather.Infrastructure\bin\Debug\net8.0\MyWeather.Application.pdb
+C:\Users\slikm\source\repos\ApkaDoPogody\MyWeather\MyWeather.Infrastructure\obj\Debug\net8.0\MyWeather.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\slikm\source\repos\ApkaDoPogody\MyWeather\MyWeather.Infrastructure\obj\Debug\net8.0\MyWeather.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\slikm\source\repos\ApkaDoPogody\MyWeather\MyWeather.Infrastructure\obj\Debug\net8.0\MyWeather.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\slikm\source\repos\ApkaDoPogody\MyWeather\MyWeather.Infrastructure\obj\Debug\net8.0\MyWeather.Infrastructure.AssemblyInfo.cs
+C:\Users\slikm\source\repos\ApkaDoPogody\MyWeather\MyWeather.Infrastructure\obj\Debug\net8.0\MyWeather.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\slikm\source\repos\ApkaDoPogody\MyWeather\MyWeather.Infrastructure\obj\Debug\net8.0\MyWeathe.032F7038.Up2Date
+C:\Users\slikm\source\repos\ApkaDoPogody\MyWeather\MyWeather.Infrastructure\obj\Debug\net8.0\MyWeather.Infrastructure.dll
+C:\Users\slikm\source\repos\ApkaDoPogody\MyWeather\MyWeather.Infrastructure\obj\Debug\net8.0\refint\MyWeather.Infrastructure.dll
+C:\Users\slikm\source\repos\ApkaDoPogody\MyWeather\MyWeather.Infrastructure\obj\Debug\net8.0\MyWeather.Infrastructure.pdb
+C:\Users\slikm\source\repos\ApkaDoPogody\MyWeather\MyWeather.Infrastructure\obj\Debug\net8.0\ref\MyWeather.Infrastructure.dll

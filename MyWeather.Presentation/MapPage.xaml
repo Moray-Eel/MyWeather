@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="MyWeather.Presentation.MapPage"
+    x:DataType="viewmodel:MapPageViewModel"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:viewmodel="clr-namespace:MyWeather.Presentation.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding AppearingCommand}" EventName="Appearing" />
+    </ContentPage.Behaviors>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label
+                BackgroundColor="Transparent"
+                HorizontalOptions="Center"
+                Padding="5"
+                Text="Data provided by Meteoblue (© Meteoblue)"
+                TextColor="White"
+                VerticalOptions="End"
+                ZIndex="1" />
+            <WebView Grid.Row="1" Source="{Binding Source}" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

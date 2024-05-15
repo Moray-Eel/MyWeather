@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    BackgroundColor="Black"
+    Shell.BackgroundColor="Black"
+    Shell.TitleColor="Azure"
+    Title="Add City"
+    x:Class="MyWeather.Presentation.InitAddCityPage"
+    x:DataType="views:InitAddCityViewModel"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:grids="clr-namespace:MyWeather.Presentation.Controls.Grids"
+    xmlns:views="clr-namespace:MyWeather.Presentation.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <grids:AddCityGrid />
+</ContentPage>

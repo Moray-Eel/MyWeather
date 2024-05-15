@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sho:MaterialFrame
+    CornerRadius="12.5"
+    MaterialBlurStyle="Dark"
+    MaterialTheme="AcrylicBlur"
+    Padding="0"
+    x:Class="MyWeather.Presentation.Controls.Frames.WeatherInfoCard"
+    x:DataType="models:WeatherInfoCardViewModel"
+    x:Name="WeatherInfoCardFrame"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:frames="clr-namespace:MyWeather.Presentation.Controls.Frames"
+    xmlns:models="clr-namespace:MyWeather.Presentation.ViewModels"
+    xmlns:sho="http://sharpnado.com"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="*,*">
+        <BoxView
+            BackgroundColor="{StaticResource CustomBlue}"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Grid.Row="0"
+            HeightRequest="1"
+            VerticalOptions="End" />
+        <BoxView
+            BackgroundColor="{StaticResource CustomBlue}"
+            Grid.Column="1"
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            HorizontalOptions="Start"
+            WidthRequest="1" />
+        <BoxView
+            BackgroundColor="{StaticResource CustomBlue}"
+            Grid.Column="2"
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            HorizontalOptions="Start"
+            WidthRequest="1" />
+        <BoxView
+            BackgroundColor="{StaticResource CustomBlue}"
+            Grid.Column="3"
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            HorizontalOptions="Start"
+            WidthRequest="1" />
+        <frames:WeatherInfoTail
+            Grid.Column="0"
+            Grid.Row="0"
+            Icon="images/white_cloud.png"
+            OnTapCommand="{Binding OnTailTapChangedCommand, Source={x:Reference WeatherInfoCardFrame}}"
+            Title="Cloudiness"
+            Value="{Binding Cloudiness, StringFormat='{0}%'}" />
+        <frames:WeatherInfoTail
+            Grid.Column="1"
+            Grid.Row="0"
+            Icon="images/white_eyefilled.png"
+            OnTapCommand="{Binding OnTailTapChangedCommand, Source={x:Reference WeatherInfoCardFrame}}"
+            Title="Visibility"
+            Value="{Binding Visibility, StringFormat='{0} m'}" />
+        <frames:WeatherInfoTail
+            Grid.Column="2"
+            Grid.Row="0"
+            Icon="images/white_pressure.png"
+            OnTapCommand="{Binding OnTailTapChangedCommand, Source={x:Reference WeatherInfoCardFrame}}"
+            Title="Pressure"
+            Value="{Binding Pressure, StringFormat='{0} hPa'}" />
+        <frames:WeatherInfoTail
+            Grid.Column="3"
+            Grid.Row="0"
+            Icon="images/white_droplet.png"
+            OnTapCommand="{Binding OnTailTapChangedCommand, Source={x:Reference WeatherInfoCardFrame}}"
+            Title="Humidity"
+            Value="{Binding Humidity, StringFormat='{0} %'}" />
+        <frames:WeatherInfoTail
+            Grid.Column="0"
+            Grid.Row="1"
+            Icon="images/white_windsock.png"
+            OnTapCommand="{Binding OnTailTapChangedCommand, Source={x:Reference WeatherInfoCardFrame}}"
+            Title="Wind Direction"
+            Value="{Binding WindDirection, StringFormat='{0}°'}" />
+        <frames:WeatherInfoTail
+            Grid.Column="1"
+            Grid.Row="1"
+            Icon="images/white_wind.png"
+            OnTapCommand="{Binding OnTailTapChangedCommand, Source={x:Reference WeatherInfoCardFrame}}"
+            Title="WindSpeed"
+            Value="{Binding WindSpeed, StringFormat='{0} km/h'}" />
+        <frames:WeatherInfoTail
+            Grid.Column="2"
+            Grid.Row="1"
+            Icon="images/white_sunrise.png"
+            OnTapCommand="{Binding OnTailTapChangedCommand, Source={x:Reference WeatherInfoCardFrame}}"
+            Title="Sunrise"
+            Value="{Binding Sunrise}" />
+        <frames:WeatherInfoTail
+            Grid.Column="3"
+            Grid.Row="1"
+            Icon="Images/white_sunset.png"
+            OnTapCommand="{Binding OnTailTapChangedCommand, Source={x:Reference WeatherInfoCardFrame}}"
+            Title="Sunset"
+            Value="{Binding Sunset}" />
+    </Grid>
+</sho:MaterialFrame>

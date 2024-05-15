@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<md:Popup
+    x:Class="MyWeather.Presentation.Controls.Popups.CityAlreadyExistsPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:md="clr-namespace:Material.Components.Maui;assembly=Material.Components.Maui"
+    xmlns:viewmodel="clr-namespace:MyWeather.Presentation.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <md:Card
+        Padding="4"
+        Shape="20"
+        WidthRequest="260">
+        <Grid Padding="10" RowDefinitions="auto,*,auto">
+            <Label
+                FontSize="14"
+                HorizontalOptions="Center"
+                Text="City already added" />
+            <Image
+                Grid.Row="1"
+                HeightRequest="40"
+                Margin="0,15,0,15"
+                Source="images/white_home.png"
+                Width="20" />
+            <HorizontalStackLayout
+                Grid.Row="2"
+                HorizontalOptions="Center"
+                Spacing="8">
+                <md:Button
+                    BackgroundColor="DimGray"
+                    Clicked="Confirm_OnClicked"
+                    FontColor="White"
+                    FontWeight="Medium"
+                    Margin="0,0,0,0"
+                    Style="{DynamicResource ElevatedButtonStyle}"
+                    Text="Ok"
+                    x:Name="Confirm" />
+            </HorizontalStackLayout>
+        </Grid>
+    </md:Card>
+</md:Popup>

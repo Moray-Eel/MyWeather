@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "0QvAMgViGjXp/0a1dbOz45g6J1It93f6zcbE1lzXmsecod9xRXk0azdtdPGOGwi07mtORgyQ6UrhIYTV9RRWyQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\slikm\\source\\repos\\ApkaDoPogody\\MyWeather\\MyWeather.Application\\MyWeather.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\slikm\\.nuget\\packages\\refractored.mvvmhelpers\\1.6.2\\refractored.mvvmhelpers.1.6.2.nupkg.sha512",
+    "C:\\Users\\slikm\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

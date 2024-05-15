@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<sho:MaterialFrame
+    CornerRadius="50"
+    HeightRequest="40"
+    Margin="0"
+    MaterialTheme="Dark"
+    Padding="0"
+    x:Class="MyWeather.Presentation.Controls.Frames.CustomSearchBar"
+    x:DataType="view:SearchBarViewModel"
+    x:Name="CustomSearchBarControl"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:sho="http://sharpnado.com"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:view="clr-namespace:MyWeather.Presentation.ViewModels;assembly=MyWeather.Presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <SearchBar
+        CancelButtonColor="Azure"
+        HorizontalTextAlignment="Start"
+        Placeholder="Enter a city name"
+        PlaceholderColor="Azure"
+        TextColor="Azure"
+        x:Name="InternalSearchBar">
+        <SearchBar.Behaviors>
+            <toolkit:EventToCommandBehavior
+                Command="{Binding Path=TextChangedCommand, Source={x:Reference CustomSearchBarControl}}"
+                CommandParameter="{Binding Text, Source={x:Reference InternalSearchBar}}"
+                EventName="TextChanged" />
+        </SearchBar.Behaviors>
+    </SearchBar>
+</sho:MaterialFrame>

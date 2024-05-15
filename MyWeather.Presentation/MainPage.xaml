@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    BackgroundColor="{StaticResource CustomBlue}"
+    x:Class="MyWeather.Presentation.MainPage"
+    x:DataType="viewmodel:MainPageViewModel"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:frames="clr-namespace:MyWeather.Presentation.Controls.Frames"
+    xmlns:grids="clr-namespace:MyWeather.Presentation.Controls.Grids"
+    xmlns:sho="http://sharpnado.com"
+    xmlns:skeleton="clr-namespace:Maui.Skeleton;assembly=Sharpnado.HorusSkeleton.Maui"
+    xmlns:stacks="clr-namespace:MyWeather.Presentation.Controls.Stacks"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:viewmodel="clr-namespace:MyWeather.Presentation.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" />
+    </Shell.BackButtonBehavior>
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding AppearingCommand}" EventName="Appearing" />
+    </ContentPage.Behaviors>
+    <RefreshView Command="{Binding RefreshWeatherDataCommand}" IsRefreshing="{Binding IsRefreshing}">
+        <Grid
+            skeleton:Skeleton.Animation="{skeleton:DefaultAnimation Beat}"
+            skeleton:Skeleton.IsBusy="{Binding IsRefreshing}"
+            skeleton:Skeleton.IsParent="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <grids:WeatherHeader BindingContext="{Binding WeatherHeaderViewModel}" Margin="10" />
+            <ScrollView Grid.Row="1">
+                <StackLayout>
+                    <stacks:WeatherSummaryCard BindingContext="{Binding WeatherSummaryCard}" Margin="10" />
+                    <frames:TemperatureChartCard
+                        BindingContext="{Binding TemperatureChartCard}"
+                        Margin="10"
+                        skeleton:Skeleton.IsBusy="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPageViewModel}}, Path=IsRefreshing}" />
+                    <frames:WeatherInfoCard
+                        BindingContext="{Binding WeatherInfoCard}"
+                        Margin="10"
+                        OnTailTapChangedCommand="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPageViewModel}}, Path=SeeExtendedForecastCommand}" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </RefreshView>
+</ContentPage>

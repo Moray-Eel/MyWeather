@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    BackgroundColor="Black"
+    Shell.BackgroundColor="Black"
+    Shell.TitleColor="White"
+    Title="Manage Cities"
+    x:Class="MyWeather.Presentation.ManageCitiesPage"
+    x:DataType="viewmodel:ManageCitiesPageViewModel"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:dtos="clr-namespace:MyWeather.Infrastructure.Dto;assembly=MyWeather.Infrastructure"
+    xmlns:frames="clr-namespace:MyWeather.Presentation.Controls.Frames"
+    xmlns:icon="clr-namespace:IconPacks.IconKind;assembly=IconPacks.Material"
+    xmlns:md="clr-namespace:Material.Components.Maui;assembly=Material.Components.Maui"
+    xmlns:sho="http://sharpnado.com"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:viewmodel="clr-namespace:MyWeather.Presentation.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IconOverride="white_arrow.png" />
+    </Shell.BackButtonBehavior>
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding AppearingCommand}" EventName="Appearing" />
+    </ContentPage.Behaviors>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <CollectionView ItemsSource="{Binding SavedCities}" Margin="0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="dtos:SavedCityDto">
+                    <SwipeView Margin="10" Padding="0">
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItemView Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ManageCitiesPageViewModel}}, Path=DeleteCityCommand}" CommandParameter="{Binding .}">
+                                    <frames:DeleteCard />
+                                </SwipeItemView>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <frames:CityCard
+                            Description="{Binding Description}"
+                            Name="{Binding Name}"
+                            Temperature="{Binding Temperature}">
+                            <sho:MaterialFrame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ManageCitiesPageViewModel}}, Path=FocusCityCommand}" CommandParameter="{Binding Id}" />
+                            </sho:MaterialFrame.GestureRecognizers>
+                        </frames:CityCard>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <md:Button
+            BackgroundColor="DimGray"
+            Command="{Binding NavigateToAddCityCommand}"
+            FontColor="White"
+            Grid.Row="1"
+            IconColor="White"
+            IconData="{Static icon:Material.Add}"
+            Margin="0,0,0,10"
+            Style="{DynamicResource ElevatedButtonStyle}"
+            Text="ADD CITY" />
+    </Grid>
+</ContentPage>

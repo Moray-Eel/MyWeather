@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentView
+    x:Class="MyWeather.Presentation.Controls.Grids.AddCityGrid"
+    x:DataType="views:AddCityBaseViewModel"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:frames="clr-namespace:MyWeather.Presentation.Controls.Frames"
+    xmlns:icon="clr-namespace:IconPacks.IconKind;assembly=IconPacks.Material"
+    xmlns:labels="clr-namespace:MyWeather.Presentation.Controls.Labels"
+    xmlns:md="clr-namespace:Material.Components.Maui;assembly=Material.Components.Maui"
+    xmlns:sho="http://sharpnado.com"
+    xmlns:views="clr-namespace:MyWeather.Presentation.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <frames:CustomSearchBar Grid.Row="0" TextChangedCommand="{Binding SearchCommand}" />
+        <FlexLayout
+            Direction="Column"
+            Grid.Row="1"
+            Margin="0,20,0,20">
+            <sho:MaterialFrame
+                CornerRadius="12.5"
+                IsVisible="{Binding CitiesNotEmpty}"
+                Margin="0,0,0,0"
+                MaterialBlurStyle="Light"
+                MaterialTheme="AcrylicBlur"
+                Padding="0">
+                <CollectionView ItemsSource="{Binding Cities}" VerticalScrollBarVisibility="Always">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <labels:CityLabel BindingContext="{Binding .}">
+                                <labels:CityLabel.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type views:AddCityBaseViewModel}}, Path=AddSelectedCityCommand}" CommandParameter="{Binding .}" />
+                                </labels:CityLabel.GestureRecognizers>
+                            </labels:CityLabel>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </sho:MaterialFrame>
+        </FlexLayout>
+        <md:Button
+            BackgroundColor="DimGray"
+            Command="{Binding AddLocatedCityCommand}"
+            FontColor="White"
+            Grid.Row="2"
+            IconColor="White"
+            IconData="{Static icon:Material.LocationOn}"
+            Margin="0,0,0,10"
+            Style="{DynamicResource ElevatedButtonStyle}"
+            Text="LOCATE ME" />
+    </Grid>
+</ContentView>

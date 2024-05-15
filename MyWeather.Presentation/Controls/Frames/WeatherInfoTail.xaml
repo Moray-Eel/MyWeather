@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout
+    Padding="5"
+    x:Class="MyWeather.Presentation.Controls.Frames.WeatherInfoTail"
+    x:DataType="viewmodel:WeatherInfoCardViewModel"
+    x:Name="WeatherInfoTailControl"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:viewmodel="clr-namespace:MyWeather.Presentation.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <StackLayout.Behaviors>
+        <toolkit:TouchBehavior
+            Command="{Binding OnTapCommand, Source={x:Reference WeatherInfoTailControl}}"
+            DefaultBackgroundColor="Transparent"
+            PressedBackgroundColor="#449FE5E0" />
+    </StackLayout.Behaviors>
+    <Image
+        HeightRequest="30"
+        Source="{Binding Icon, Source={x:Reference WeatherInfoTailControl}}"
+        WidthRequest="30" />
+    <Label
+        FontSize="8"
+        HorizontalTextAlignment="Center"
+        Margin="0,3,0,0"
+        Text="{Binding Title, Source={x:Reference WeatherInfoTailControl}}" />
+    <Label
+        FontAttributes="Bold"
+        FontAutoScalingEnabled="True"
+        FontSize="12"
+        HorizontalTextAlignment="Center"
+        Margin="0,2,0,5"
+        Text="{Binding Value, Source={x:Reference WeatherInfoTailControl}}" />
+</StackLayout>
